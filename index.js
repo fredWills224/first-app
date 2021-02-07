@@ -12,18 +12,25 @@
 // The server should respond to all requests with astring
 
     var server = http.createServer(function(req, res){
+        
         // Get the URL and parse it
             //second parameter set to [true] so that the query-string-model gets called
             var parsedUrl = url.parse(req.url, true) 
         // Get the URL and parse it
 
         // Get the path
+            
             // [pathname] is a key on the object [parsedUrl] 
             // [path] = foo -> http://localhost3000/foo
             var path = parsedUrl.pathname;
             // trimming path with regex inside of the replace string method
             var trimmedPath = path.replace(/^\/+|\/+$/g,'');
+        
         // Get the path
+
+        // Get the query string as an object
+            var queryStringObject = parsedUrl.query;
+        // Get the query string as an object
 
         // Get the HTTP Method
             // [req] is a parameter passed to the [server] function
@@ -35,8 +42,12 @@
         // Send the response
 
         // Log the request path
-            console.log('Request received on path: ' +trimmedPath+ ' with method: ' +method);
+            console.log('Request received on path: ' +trimmedPath+ 
+                        ' with method: ' +method+
+                        ' and with these query string parameters', queryStringObject
+            );
         // Log the request path
+
     });
     
 // The server should respond to all requests with astring
