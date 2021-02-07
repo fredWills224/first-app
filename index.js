@@ -6,6 +6,7 @@
 // Dependencies
     var http = require('http');
     var url = require('url');
+    var StringDecoder = require('string_decoder').StringDecoder;
 // Dependencies
 
 
@@ -41,14 +42,39 @@
             var headers = req.headers;
         // Get the headers as an object
 
-        // Send the response
-            res.end('\nHello World\n');
-        // Send the response
+        // Get the payload, if any 
 
-        // Log the request path
-            console.log('Request recieved with these headers: ', headers);
-        // Log the request path
+            // decode and append incoming data to empty string
+                
+                var decoder = new StringDecoder('utf-8');
+                var buffer = '';
+                // binding to event that the [req] object emits called data
+                    req.on('data', function(data){
+                        buffer += decoder.write(data);
+                    });
+                // binding to event that the [req] object emits called data
+            
+            // decode and append incoming data to empty string
 
+            // [req]'s end event handler
+
+                req.on('end', function(){
+
+                    buffer += decoder.end();
+                    // Send the response
+                        res.end('\nHello World\n');
+                    // Send the response
+
+                    // Log the request path
+                        console.log('Request recieved with this payload: ', buffer);
+                    // Log the request path
+                
+                });
+
+            // [req]'s end event handler
+            
+        // Get the payload, if any
+        
     });
     
 // The server should respond to all requests with astring
