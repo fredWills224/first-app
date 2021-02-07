@@ -37,15 +37,16 @@
             var method = req.method.toLocaleLowerCase();
         // Get the HTTP Method
 
+        // Get the headers as an object
+            var headers = req.headers;
+        // Get the headers as an object
+
         // Send the response
             res.end('\nHello World\n');
         // Send the response
 
         // Log the request path
-            console.log('Request received on path: ' +trimmedPath+ 
-                        ' with method: ' +method+
-                        ' and with these query string parameters', queryStringObject
-            );
+            console.log('Request recieved with these headers: ', headers);
         // Log the request path
 
     });
