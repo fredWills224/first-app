@@ -25,12 +25,17 @@
             var trimmedPath = path.replace(/^\/+|\/+$/g,'');
         // Get the path
 
+        // Get the HTTP Method
+            // [req] is a parameter passed to the [server] function
+            var method = req.method.toLocaleLowerCase();
+        // Get the HTTP Method
+
         // Send the response
             res.end('\nHello World\n');
         // Send the response
 
         // Log the request path
-            console.log('Request received on path: ' +trimmedPath);
+            console.log('Request received on path: ' +trimmedPath+ ' with method: ' +method);
         // Log the request path
     });
     
