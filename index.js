@@ -47,16 +47,15 @@
         // Get the payload, if any 
 
             // decode and append incoming data to empty string
-                
                 var decoder = new StringDecoder('utf-8');
-                var buffer = '';
-                // binding to event that the [req] object emits called data
-                    req.on('data', function(data){
-                        buffer += decoder.write(data);
-                    });
-                // binding to event that the [req] object emits called data
-            
+                var buffer = '';    
             // decode and append incoming data to empty string
+            
+            // binding to event that the [req] object emits called data
+                req.on('data', function(data){
+                    buffer += decoder.write(data);
+                });
+            // binding to event that the [req] object emits called data
 
             // [req]'s end event handler
 
