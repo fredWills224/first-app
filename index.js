@@ -7,6 +7,7 @@
     var http = require('http');
     var url = require('url');
     var StringDecoder = require('string_decoder').StringDecoder;
+    var config = require('./config');
 // Dependencies
 
 
@@ -126,11 +127,13 @@
 // The server should respond to all requests with astring
 
 
-// Start the server, and have it listen on port 3000
-    server.listen(3000, function(){
-        console.log("The server is listening on port 3000 now");
+// Start the server, and have it listen dynamic port
+    server.listen(config.port, function(){
+        console.log(
+            "The server is listening on port " +config.port+ " in " +config.envName+ " mode"
+        );
     });
-// Start the server, and have it listen on port 3000
+// Start the server, and have it listen dynamic port
 
 // Define the handlers
 
