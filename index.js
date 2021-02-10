@@ -102,6 +102,7 @@
                             // Convert the payload to a string
                             
                             // Return the response
+                                res.setHeader('Content-Type', 'application/json');
                                 res.writeHead(statusCode);
                                 res.end(payloadString);
                             // Return the response
