@@ -68,12 +68,12 @@
     });
 // Start the [httpServer]
 
-// All the server logic for both the [httpServer] and [httpsServer]
+// [unifiedServer] logic
     
     var unifiedServer = function(req, res){
 
         // Get the [url] and parse it
-            //second parameter set to [true] so that the query-string-module gets called
+            //second parameter set to true so that the query-string-module gets called
             var parsedUrl = url.parse(req.url, true) 
         // Get the [url] and parse it
 
@@ -83,9 +83,9 @@
                 var path = parsedUrl.pathname;
             // [pathname] is a key on the object [parsedUrl], [path] = foo -> http://localhost3000/foo
             
-            // trimming path with regex inside of the replace string method
+            // trimming [path] with regex inside of the replace string method
                 var trimmedPath = path.replace(/^\/+|\/+$/g,'');
-            // trimming path with regex inside of the replace string method
+            // trimming [path] with regex inside of the replace string method
         
         // Get the [path]
         
@@ -202,4 +202,4 @@
 
     };
 
-// All the server logic for both the [httpServer] and [httpsServer]
+// [unifiedServer] logic
