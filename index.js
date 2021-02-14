@@ -178,7 +178,8 @@
     
         // Define a request [router]
             var router = {
-                'ping': handlers.ping
+                'ping' : handlers.ping,
+                'users' : handlers.users
             };
         // Define a request [router]
 
