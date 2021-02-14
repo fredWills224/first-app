@@ -10,6 +10,7 @@
     var StringDecoder = require('string_decoder').StringDecoder;
     var config = require('./config');
     var fs = require('fs');
+    var handlers = require('./lib/handlers');
     // lib test dependency
         //var _data = require('./lib/data');
     // lib test dependency
@@ -174,26 +175,7 @@
             // [req]'s end event handler
             
         // Get the [payload], if any
-
-        // Define the [handlers]
-            
-            var handlers = {};
-            // [ping] handler
-                handlers.ping = function(data, callback){
-                    callback(200);
-                };
-            // [ping] handler
-
-            // [notFound] handler
-                handlers.notFound = function(data, callback){
-                    // Callback a http status code
-                        callback(404);
-                    // Callback a http status code
-                };
-            // [notFound] handler
-            
-        // Define the [handlers]
-            
+    
         // Define a request [router]
             var router = {
                 'ping': handlers.ping
