@@ -10,8 +10,37 @@
     var StringDecoder = require('string_decoder').StringDecoder;
     var config = require('./config');
     var fs = require('fs');
+    var _data = require('./lib/data');
 // Dependencies
 
+// Testing
+
+    // Create test
+        // @TODO delete this
+        // _data.create('test', 'newFile',{'foo' : 'bar'}, function(err){
+        //     console.log('this was the error', err);
+        // });
+    // Create test
+    // Read test
+        // @TODO delete this
+        // _data.read('test', 'newFile', function(err, data){
+        //     console.log('this was the error', err, 'and this was the data', data);
+        // });
+    // Read test
+    // Update test
+        // @TODO delete this
+        // _data.update('test', 'newFile', {'fizz' : 'buzz'}, function(err){
+        //     console.log('this was the error', err);
+        // });
+    // Update test
+    // Delete test
+        // @TODO delete this
+        _data.delete('test', 'newFile', function(err){
+            console.log('this was the error', err);
+        });
+    // Delete test
+
+// Testing
 
 // Instantiate the [httpServer]
     var httpServer = http.createServer(function(req, res){
@@ -149,14 +178,14 @@
         // Get the [payload], if any
 
         // Define the [handlers]
+            
             var handlers = {};
-                    
             // [ping] handler
                 handlers.ping = function(data, callback){
                     callback(200);
                 };
             // [ping] handler
-            
+
             // [notFound] handler
                 handlers.notFound = function(data, callback){
                     // Callback a http status code
