@@ -166,7 +166,7 @@
                             // Return the response [res]
                             
                             // Log the request [path]
-                                console.log('Returning this response: ', statusCode, payloadString, data);
+                                console.log('Returning this response: ', statusCode, payloadString);
                             // Log the request [path]
                         
                         });
