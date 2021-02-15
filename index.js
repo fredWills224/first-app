@@ -8,9 +8,10 @@
     var https = require('https');
     var url = require('url');
     var StringDecoder = require('string_decoder').StringDecoder;
-    var config = require('./config');
+    var config = require('./lib/config');
     var fs = require('fs');
     var handlers = require('./lib/handlers');
+    var helpers = require('./lib/helpers');
     // lib test dependency
         //var _data = require('./lib/data');
     // lib test dependency
@@ -135,7 +136,7 @@
                             'queryStringObject' : queryStringObject,
                             'method' : method,
                             'headers' : headers,
-                            'payload' : buffer
+                            'payload' : helpers.parseJsonToObject(buffer)
                         };
                     // Construct the [data] object to send to the handler
                     
@@ -165,7 +166,7 @@
                             // Return the response [res]
                             
                             // Log the request [path]
-                                console.log('Returning this response: ', statusCode, payloadString);
+                                console.log('Returning this response: ', statusCode, payloadString, data);
                             // Log the request [path]
                         
                         });
