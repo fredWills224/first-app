@@ -17,6 +17,11 @@
     // lib test dependency
 // Dependencies
 
+// @TODO GET RID OF THIS
+helpers.sendTwilioSms('5136155487', 'Hello!', function(err){
+    console.log('this was the error', err);
+});
+
 // Testing lib manually
 
     // Create test
