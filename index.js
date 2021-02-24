@@ -18,7 +18,7 @@
 // Dependencies
 
 // @TODO GET RID OF THIS
-helpers.sendTwilioSms('5136155487', 'Hello!', function(err){
+helpers.sendTwilioSms('5135376811', 'Hello!', function(err){
     console.log('this was the error', err);
 });
 
