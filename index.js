@@ -18,7 +18,7 @@
             server.init(); 
         // Start the server
         // Start the workers
-            workers.init(); 
+            //workers.init(); 
         // Start the workers 
     };
 // Initialization the function [init]
